@@ -46,7 +46,11 @@ public class WhiskyTrackerApplicationTests {
 		assertEquals("The Macallan Anniversary Malt", found.get(0).getName());
 	}
 
-
+	@Test
+	public void canGetWhiskyByRegion(){
+		List<Whisky> found = whiskyRepository.findWhiskyByDistilleryRegion("Highland");
+		assertEquals(2, found.size());
+	}
 
 
 }
